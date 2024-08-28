@@ -28,10 +28,15 @@ jobs:
       - name: Make a sentence
         id: sentence_maker
         run: |
-            # USTAW ZMIENNĄ ŚRODOWISKOWĄ
+            echo "MESSAGE='THIS IS HALLOWEN'" >> "$GITHUB_OUTPUT"
+    outputs:
+      MESSAGE_OUTPUT : ${{ steps.sentence_maker.outputs.MESSAGE }}
 
   consumer:
+    needs: ['producer']
     runs-on: ubuntu-latest
+    env:
+      message: ${{ needs.producer.outputs.MESSAGE_OUTPUT }}
     steps:
       - name: Print the message
         run: |
