@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Set color
         id: color-selector
-        run: <USTAW ZMIENNĄ >
+        run: |
+          export COLOR="BLUE"
       - name: Get color
         run: echo "The selected color is $COLOR"
         
