@@ -7,13 +7,13 @@ env:
 
 jobs:
   display-variables:
-    name: ${{secrets.ENVIRONMENT_VAR}}
+    name: ${{ vars.ENVIRONMENT_VAR }}
     runs-on: ubuntu-latest
-    enviroment: test
+    environment: test
     env:
-      REPOSITORY_VAR: ${{secrets.REPOSITORY_VAR}}
-      ORGANIZATION_VAR: ${{secrets.ORGANIZATION_VAR}}
-      ENVIRONMENT_VAR: ${{secrets.ENVIRONMENT_VAR}}
+      REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+      ORGANIZATION_VAR: ${{ vars.ORGANIZATION_VAR }}
+      ENVIRONMENT_VAR: ${{ vars.ENVIRONMENT_VAR }}
       JOB_VAR: "JB Var"
     steps:
     - name: Use variables 1
