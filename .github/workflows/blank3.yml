@@ -14,7 +14,7 @@ jobs:
       - name: Set color
         id: color-selector
         run: |
-          echo "COLOR='BLUE'" >> $GITHUB_OUTPUTS
+          echo "COLOR='BLUE WHITE'" >> "$GITHUB_OUTPUT"
       - name: Get color
         env:
           COLOR: ${{ steps.color-selector.outputs.COLOR }}
